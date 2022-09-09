@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<a href="erweima.html">输入完后请点击此处</a>
+<script>
+    var v=prompt("输入姓名：");
+    var n=prompt("请输入学院：");
+    var p=prompt("请输入专业：");
+    var m=prompt("请输入学号：");
+    var l=prompt("请按格式输入班级：（如：金融工程18（3）");
+    // var v=document.getElementById("xm").value
+    
+    localStorage.setItem("xm",v);
+    localStorage.setItem("xy",n);
+    localStorage.setItem("xh",m);
+    localStorage.setItem("bj",l);
+    localStorage.setItem("zy",p);
+</script>
+
+</body>
+</html>
