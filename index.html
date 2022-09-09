@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="ind.css">
+
+</head>
+
+<body>
+	<!-- 顶部时间 -->
+	<span id="timef" class="timef top"></span>
+	<!-- 绿码 -->
+	<div class="ma">
+		<img src="绿码.jpeg" alt="photo">
+	</div>
+	<!-- 第一栏 -->
+	<div class="yi">
+		<div class="dy">
+			<span class="wai">外出时间</span>
+		</div>
+		<ul>
+			<li>
+				<span class="fl">离校时间</span>
+				<span>
+					<span id="times" class="times fr time"></span>
+				</span>
+			</li>
+			<li>
+				<span class="fl">回校时间</span>
+				<span>
+					<span id="timet" class="timet fr time"></span>
+				</span>
+			</li>
+		</ul>
+	</div>
+	<!-- 第二栏 -->
+	<div class="yi">
+		<div class="dy">
+			<span class="wai">学生信息</span>
+		</div>
+		<ul>
+			<li>
+				<span class="flb">姓名</span>
+				<span class="fr font">
+					<span class="mz"></span>
+				</span>
+			</li>
+			<li>
+				<span class="flb">学号</span>
+				<span class="fr font">
+					<span class="xh"></span>
+				</span>
+			</li>
+			<li>
+				<span class="flb">学院</span>
+				<span class="fr font xy"></span>
+			</li>
+			<li>
+				<span class="flb">专业</span>
+				<span class="fr font">
+					<span class="zy"></span>
+				</span>
+			</li>
+			<li>
+				<span class="flb">班级</span>
+				<span class="fr font bj"></span>
+			</li>
+		</ul>
+	</div>
+	
+	<script>
+		var show = function () {
+			var date = new Date();
+			var year = date.getFullYear();
+			var month = date.getMonth() + 1;
+			month = month < 10 ? "0" + month : month;
+			var day = date.getDate();
+			day = day < 10 ? "0" + day : day;
+			var hour = date.getHours();
+			hour = hour < 10 ? "0" + hour : hour;
+			var minute = date.getMinutes();
+			minute = minute < 10 ? "0" + minute : minute;
+			var second = date.getSeconds();
+			second = second < 10 ? "0" + second : second;
+			result = year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second;
+			document.getElementById("timef").innerHTML = result;
+		}
+		var show1 = function () {
+			var date = new Date();
+			var year = date.getFullYear();
+			var month = date.getMonth() + 1;
+			month = month < 10 ? "0" + month : month;
+			var day = date.getDate();
+			day = day < 10 ? "0" + day : day;
+			var hour = date.getHours();
+			hour=hour-1;
+			hour = hour < 10 ? "0" + hour : hour - 1;
+			
+			var minute = date.getMinutes();
+			minute = 30;
+			second = 0;
+			result = year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second + second;
+			document.getElementById("times").innerHTML = result;
+		}
+		// var show2 = function () {
+		// 	var date = new Date();
+		// 	var year = date.getFullYear();
+		// 	var month = date.getMonth() + 1;
+		// 	month = month < 10 ? "0" + month : month;
+		// 	var day = date.getDate();
+		// 	day = day < 10 ? "0" + day : day;
+		// 	var hour = date.getHours();
+		// 	hour = hour < 10 ? "0" + hour : hour + 1;
+		// 	var minute = date.getMinutes();
+		// 	minute = 30;
+		// 	second = 0;
+		// 	result = year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second + second;
+		// 	document.getElementById("timet").innerHTML = result;
+		// }
+		show();
+		show1();
+		// show2();
+		setInterval("show()", 1000);
+		setInterval("show1()", 1000);
+		// setInterval("show2()", 1000);
+		var nyako=document.querySelector('.timet');
+        function getDate() {
+			var date = new Date();
+			var year = date.getFullYear();
+			var month = date.getMonth() + 1;
+			month = month < 10 ? "0" + month : month;
+			var day = date.getDate();
+			day = day < 10 ? "0" + day : day;
+			var hour = date.getHours();
+			hour=hour+1;
+			hour = hour < 10 ? "0" + hour : hour + 1;
+			var minute = date.getMinutes();
+			minute = 30;
+			second = 0;
+			return year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second + second;
+		}
+        nyako.innerHTML=getDate();
+
+		var mz =document.querySelector('.mz');
+		// var a=prompt("请输入名字");
+		// var b=prompt("请输入专业");
+		// var c=prompt("请输入学号");
+		var a=localStorage.getItem("xm");
+		var b=localStorage.getItem("xy");
+		var c=localStorage.getItem("xh");
+		var d=localStorage.getItem("bj");
+		var e=localStorage.getItem("zy");
+		var xy=document.querySelector('.xy');
+		xy.innerHTML=b;
+		var xh=document.querySelector('.xh');
+		var bj=document.querySelector('.bj')
+		var zy=document.querySelector('.zy')
+		xh.innerHTML=c;
+		mz.innerHTML=a;
+		bj.innerHTML=d;
+		zy.innerHTML=e;
+
+		
+	</script>
+</body>
+
+</html>
